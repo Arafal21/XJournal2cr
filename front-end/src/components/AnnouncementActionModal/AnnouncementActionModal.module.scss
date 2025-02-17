@@ -1,0 +1,145 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+.modalContainer {
+	position: fixed;
+	z-index: $MODAL-CONTAINER-MOBILE;
+	top: 0;
+	left: 0;
+
+	&.active {
+		.overlay {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		.modalOpened {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	.modalOpened {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.overlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background-color: $white-300;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.modalOpened {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		transform: translate(-50%, -50%) scale(1.2);
+		height: 100%;
+		width: calc(100% - 2rem);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		background-color: $white-300;
+
+		.modalContent {
+			height: 100%;
+			margin-top: 1rem;
+			padding: $vertical-padding-lg $horizontal-padding-lg;
+			background-color: red;
+			background-color: $white-50;
+			border-radius: $corner-radius-sm;
+			border: 1px solid $light-hover;
+
+			.line {
+				height: 1px;
+				width: 100%;
+				background-color: red;
+				margin: $spacing-lg 0;
+				background-color: $light-hover;
+			}
+
+			.textArea {
+				width: 100%;
+				border: none;
+				height: 22rem;
+				resize: none;
+			}
+
+			.backBtnMobile {
+				display: flex;
+				align-items: center;
+				margin-bottom: $spacing-xl;
+
+				.backBtnText {
+					@include button-600;
+					color: $text-grey-300;
+					margin-left: $spacing-xs;
+				}
+			}
+		}
+
+		.closeModalBtn {
+			background-color: $normal;
+			margin: 1rem 0 6rem;
+			padding: $vertical-padding-xl $vertical-padding-2xl;
+			border-radius: $corner-radius-2xl;
+			color: $text-grey-50;
+		}
+	}
+}
+
+@media (width >= 768px) {
+	.modalContainer {
+		z-index: $MODAL-CONTAINER-TABLET-DESKTOP;
+
+		.overlay {
+			background-color: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(5px);
+		}
+
+		.modalOpened {
+			height: auto;
+			max-width: 51.75rem;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 0 $horizontal-padding-2xl;
+			border-radius: $corner-radius-lg;
+
+			.modalContent {
+				margin-top: auto;
+				height: 23rem;
+				width: 100%;
+				border-radius: $corner-radius-sm;
+				transition: height 0.3s;
+
+				.backBtnMobile {
+					display: none;
+				}
+
+				.textArea {
+					height: 8.5rem;
+				}
+				.textAreaExtended {
+					height: 15.5rem;
+				}
+			}
+			.modalExtended {
+				height: 16rem;
+			}
+
+			.closeModalBtn {
+				margin: $spacing-2xl 0;
+				width: 12rem;
+				border-radius: $corner-radius-xs;
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+export const schoolName = '1st Programming School in Poland';

@@ -1,0 +1,14 @@
+.wrapperForLogged {
+	max-width: 100rem;
+	// margin: 0 auto;
+	margin: 0.5rem 1rem 5.5rem;
+}
+
+@media (width >= 768px) {
+	.wrapperForLogged {
+		max-width: 100rem;
+		// margin: 0 auto;
+		padding: 1.5rem;
+		margin: 0 0 0 12.25rem;
+	}
+}

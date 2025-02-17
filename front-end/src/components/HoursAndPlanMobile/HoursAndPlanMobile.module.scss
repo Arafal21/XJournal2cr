@@ -1,0 +1,99 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+
+
+	.column {
+		width: 100%;
+		.hours {
+			.hour {
+				@include body-2-400;
+				color: $text-grey-300;
+				margin-bottom: 5rem;
+				height: $horizontal-padding-2xl;
+				padding-right: $horizontal-padding-2xl;
+			}
+
+			.hour:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.desktopItems {
+		display: none;
+	}
+
+	.days {
+		display: none;
+	}
+
+	@media (width >= 768px) {
+		.calendarContainer {
+			padding: $spacing-lg;
+			border-radius: $corner-radius-lg;
+			border: 1px solid $light-hover;
+			background-color: $white-50;
+		}
+		.blank {
+			width: 30px;
+			height: 3rem;
+		}
+
+		.days {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.desktopItems {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin-right: 10px;
+		}
+
+		.desktopItems:last-of-type {
+			margin-right: 0px;
+		}
+	}
+
+	.dayText {
+		@include body-400;
+		color: $text-grey-300;
+		text-align: center;
+		height: 3rem;
+	}
+
+	.reverse {
+		display: flex;
+	}
+
+	.hoursContainerDesktop {
+		display: none;
+	}
+
+	@media (width >= 768px) {
+		.hoursContainerMobile {
+			display: none;
+		}
+
+		.hoursContainerDesktop {
+			display: block;
+		}
+	}
+
+	.row {
+		display: flex;
+		width: 100%;
+}
+
+
+@media (width >=768px) {
+	.calendarContainer {
+		.column {
+			width: auto;
+		}
+	}
+}

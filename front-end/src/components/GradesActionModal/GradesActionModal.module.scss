@@ -1,0 +1,198 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+.modalContainer {
+	position: fixed;
+	z-index: $MODAL-CONTAINER-TABLET-DESKTOP;
+	top: 0;
+	left: 0;
+
+	.overlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background-color: $white-300;
+		opacity: 0;
+		pointer-events: none;
+		background-color: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(5px);
+	}
+
+	&.active {
+		.overlay {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		.modalOpened {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate(-50%, -50%) scale(1);
+			border-radius: $corner-radius-lg;
+			width: 100%;
+		}
+	}
+
+	.modalOpened {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		.modalContent {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			overflow: hidden;
+
+			.actionMenu {
+				padding: 0 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				background-color: $white-300;
+				border-top-left-radius: $corner-radius-lg;
+				border-top-right-radius: $corner-radius-lg;
+			}
+		}
+	}
+
+	.modalOpened {
+		transform: translate(-50%, -50%) scale(1.2);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		background-color: $white-50;
+		width: 20rem;
+	}
+}
+
+// in progress: nesting
+
+.gradeSelectContainer {
+	display: flex;
+	max-width: 16.5rem;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.gradeItemBtn {
+	@include body-400;
+	border-radius: $corner-radius-sm;
+	border: 1px solid $text-grey-50;
+	background-color: $white-300;
+	color: $text-grey-300;
+	padding: 0.75rem;
+	width: 3rem;
+	height: 3rem;
+}
+
+.heading {
+	@include header-3-600;
+	color: $text-grey-300;
+	padding: 1.25rem 0;
+}
+
+.trashIcon {
+	margin: 0.25rem 0;
+}
+
+.createdInfo {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2rem;
+
+	.name {
+		margin-left: $spacing-lg;
+		color: $text-grey-300;
+	}
+}
+
+.subject {
+	@include body-400;
+	margin: $spacing-3xl 0 $spacing-sm;
+	color: $text-grey-300;
+}
+
+@media (width >= 768px) {
+	.modalOpened {
+		width: 28.5rem;
+	}
+}
+
+.closeModalBtn {
+	background-color: $normal;
+	padding: $vertical-padding-xl $vertical-padding-2xl;
+	border-radius: $corner-radius-2xl;
+	color: $text-grey-50;
+	width: 95%;
+	margin: $spacing-2xl 0;
+}
+
+@media (width >= 768px) {
+	.closeModalBtn {
+		margin: $spacing-2xl 0;
+		width: 12rem;
+		border-radius: $corner-radius-xs;
+	}
+}
+
+@media (width >= 768px) {
+	.modalContainer {
+		&.active {
+			.modalOpened {
+				width: 28.5rem;
+			}
+		}
+	}
+}
+
+//
+//
+//
+
+@media (width < 768px) {
+	.gradeItemBtn:nth-of-type(2) {
+		margin: 0 $spacing-2xl;
+	}
+
+	.gradeItemBtn:nth-of-type(3) {
+		margin-right: $spacing-2xl;
+	}
+	.gradeItemBtn:nth-of-type(5) {
+		margin-top: $spacing-2xl;
+
+		margin-right: $spacing-2xl;
+	}
+	.gradeItemBtn:nth-of-type(5),
+	.gradeItemBtn:nth-of-type(6) {
+		margin-top: $spacing-2xl;
+	}
+}
+
+@media (width >= 768px) {
+	.gradeItemBtn:nth-of-type(2),
+	.gradeItemBtn:nth-of-type(3),
+	.gradeItemBtn:nth-of-type(4),
+	.gradeItemBtn:nth-of-type(5),
+	.gradeItemBtn:nth-of-type(6) {
+		margin: 0;
+	}
+}
+
+@media (width >= 768px) {
+	.gradeSelectContainer {
+		max-width: 100%;
+		justify-content: space-between;
+
+		width: 100%;
+		padding: 0 $horizontal-padding-2xl;
+	}
+}
+
+.gradeActive {
+	background-color: $green-500;
+	color: $text-grey-50;
+}

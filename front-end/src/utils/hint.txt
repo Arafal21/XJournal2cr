@@ -1,0 +1,5 @@
+UTILSY:
+
+- BARDZO pojedyncze funkcje. nawet niewielkie funkcje, robić już kolejny plik, w jednym pliku jak najmniej niech się dzieje.
+- to z utilsów robi się testy do kodu - jednostkowe - w np. Jest
+- czysty JS ! W innym przypadku ciężko się będzie to testowało, jeżeli np jsx!

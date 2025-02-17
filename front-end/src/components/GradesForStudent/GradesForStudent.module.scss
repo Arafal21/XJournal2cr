@@ -1,0 +1,50 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+
+.semestrText {
+	display: none;
+}
+
+.hiddenForDesktop {
+	display: none;
+}
+.mark {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	align-items: center;
+	display: flex;
+	border-bottom: $stroke-xs solid $light-hover;
+	padding: 1.5rem 0;
+}
+
+.gradesContainer {
+	display: flex;
+	width: 100%;
+}
+
+@media (width < 768px) {
+	.gradesContainer {
+		overflow: scroll;
+	}
+}
+@media (width >= 768px) {
+	.hiddenForDesktop {
+		@include header-3-400;
+	}
+
+	.semestrText:last-of-type {
+		margin-top: $spacing-4xl;
+	}
+	.semestrText {
+		display: block;
+		@include header-3-400;
+		color: $text-grey-300;
+	}
+
+	.row {
+		padding: 1rem 0;
+	}
+}

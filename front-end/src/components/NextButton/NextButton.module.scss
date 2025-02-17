@@ -1,0 +1,12 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+
+.nextBtn {
+	@include classPreviousNextBtn;
+}
+
+@media (width >= 768px) {
+	.nextBtn {
+		@include previousNextBtnDesktop;
+	}
+}

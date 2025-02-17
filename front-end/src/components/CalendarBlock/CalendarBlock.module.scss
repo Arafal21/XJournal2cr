@@ -1,0 +1,120 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+.block {
+	margin-bottom: 0.5rem;
+	width: 100%;
+}
+
+@media (width >= 768px) {
+	.block:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.scheduledBlock {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: $corner-radius-sm;
+	// padding: $horizontal-padding-lg $vertical-padding-lg;
+	height: 6rem;
+
+	.subject {
+		@include body-2-700;
+	}
+
+	.time {
+		margin: $spacing-sm 0;
+	}
+
+	.time,
+	.person {
+		@include body-2-400;
+	}
+}
+
+// ##################
+// themes
+
+.mustard,
+.pink,
+.blue,
+.dark-green,
+.light-green,
+.violet {
+	.subject,
+	.time,
+	.person {
+		color: $text-grey-50;
+	}
+}
+
+.white {
+	background: linear-gradient(0deg, #f8f8f8 1.04%, #eaeaea 100%);
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1) inset;
+
+	.subject,
+	.time,
+	.person {
+		color: $text-grey-300;
+	}
+}
+
+.mustard {
+	background: linear-gradient(0deg, #d1a754 1.04%, #b68c3d 100%);
+}
+
+.pink {
+	background: linear-gradient(0deg, #c96a87 1.04%, #a64e6c 100%);
+}
+
+.blue {
+	background: linear-gradient(0deg, #6c83ba 1.04%, #506aa3 100%);
+}
+
+.dark-green {
+	background: linear-gradient(0deg, #5f6d64 1.04%, #495752 100%);
+}
+
+.light-green {
+	background: linear-gradient(0deg, #20a490 1.04%, #188678 100%);
+}
+
+.violet {
+	background: linear-gradient(0deg, #5a54f6 1.04%, #4a46d9 100%);
+}
+
+// ##################
+
+// ##################
+// empty
+
+.empty {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: $corner-radius-sm;
+	border: 1px solid $text-grey-50;
+	background: $white-50;
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+	opacity: 0;
+	transition: opacity 0.3s;
+
+	.emptyText {
+		@include button-600;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $text-grey-300;
+		height: 6rem;
+	}
+}
+
+.empty:hover {
+	opacity: 1;
+}
+
+// ##################

@@ -1,0 +1,51 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+.createdInfo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.user {
+		display: flex;
+	}
+
+	.nameAndRole {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 $spacing-sm;
+
+		.role {
+			margin-bottom: $spacing-xs;
+		}
+
+		.role,
+		.name {
+			@include body-2-400;
+
+			color: $text-grey-300;
+		}
+	}
+
+	.date {
+		@include caption-400;
+		color: $text-grey-300;
+	}
+}
+
+@media (width >= 768px) {
+	.createdInfo {
+		.user {
+			.nameAndRole {
+				.name {
+					@include body-2-400;
+				}
+			}
+		}
+		.date {
+			@include body-2-400;
+		}
+	}
+}

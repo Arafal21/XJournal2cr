@@ -1,0 +1,38 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+
+.desktopItems {
+	display: none;
+}
+
+.days {
+	display: none;
+}
+
+@media (width >= 768px) {
+	.days {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.desktopItems {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-right: 10px;
+	}
+
+	.desktopItems:last-of-type {
+		margin-right: 0px;
+	}
+}
+
+.dayText {
+	@include body-400;
+	color: $text-grey-300;
+	text-align: center;
+	height: 3rem;
+}

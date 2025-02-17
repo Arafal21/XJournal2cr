@@ -1,0 +1,154 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/z-indexes.scss' as *;
+
+.roundedRight {
+	border-top-right-radius: 1rem;
+}
+
+.nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: $white-50;
+	width: 100%;
+	border-top-left-radius: 1rem;
+	box-shadow: 5px 5px 5px 5px $secondary-grey-600;
+	z-index: $SIDE-NAV-BAR;
+
+	.primaryItems {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 5rem;
+		padding: 0 1.25rem;
+
+		.navHeading {
+			display: none;
+		}
+
+		.desktopItems {
+			display: none;
+		}
+
+		.mobileExtendBtn {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: $text-grey-300;
+		}
+	}
+	.mobileExtendedOptions {
+		position: fixed;
+		bottom: 5rem;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		background-color: $white-50;
+		box-shadow: 0px -10px 20px $secondary-grey-600;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
+
+		.mobileExtendedOption {
+			padding: 0.625rem;
+		}
+	}
+}
+
+.logoutBtn {
+	@include caption-400;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.375rem;
+	color: $text-grey-300;
+	border-radius: $corner-radius-sm;
+}
+
+.logoutBtn:hover {
+	background-color: $green-200;
+}
+
+.lowerDesktopItems {
+	display: none;
+}
+
+@media (width >= 768px) {
+	.lowerDesktopItems {
+		display: block;
+	}
+	.nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100vh;
+		width: auto;
+		box-shadow: 0 0 0 0;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+		border-right: 1px solid $light-hover;
+		padding: $vertical-padding-2xl $horizontal-padding-2xl;
+
+		.primaryItems {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			height: auto;
+			width: 100%;
+			padding: 0;
+
+			.desktopItems {
+				display: block;
+			}
+
+			.navHeading {
+				display: block;
+
+				.personalInfo {
+					display: flex;
+					align-items: center;
+					padding: 1.5rem 0;
+
+					.avatarImg {
+						margin: $spacing-sm;
+					}
+
+					.name {
+						line-height: $font-size-xl;
+						font-weight: $font-weight-regular;
+						font-size: $font-size-md;
+						color: $text-grey-300;
+					}
+
+					.position {
+						line-height: $font-size-md;
+						font-weight: $font-weight-regular;
+						font-size: $font-size-sm;
+						color: $text-grey-300;
+					}
+				}
+			}
+			.mobileExtendBtn {
+				display: none;
+			}
+		}
+	}
+
+	.linkText {
+		padding-left: $spacing-sm;
+	}
+
+	.logoutBtn {
+		@include body-400;
+		flex-direction: row;
+		width: 100%;
+		padding: $vertical-padding-md $horizontal-padding-lg;
+	}
+
+	.lowerDesktopItems {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}

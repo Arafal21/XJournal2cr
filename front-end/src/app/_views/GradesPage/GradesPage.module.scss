@@ -1,0 +1,38 @@
+@use '../../../styles/variables.scss' as *;
+@use '../../../styles/mixins' as *;
+
+.reverse {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+.line {
+	display: none;
+}
+@media (width >= 768px) {
+	.row {
+		align-items: start;
+		flex-direction: row;
+		width: auto;
+	}
+
+	.reverse {
+		justify-content: start;
+		align-items: start;
+	}
+	.line {
+        display: block;
+		height: 1px;
+		background-color: $light-hover;
+		margin-bottom: $spacing-2xl;
+	}
+}
