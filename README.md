@@ -1,4 +1,4 @@
-# ⚡️🔋 XJournal ////// README IN PROGRESS
+# ⚡️🔋 XJournal
 
 ## 📜 Table of Contents
 
@@ -97,11 +97,11 @@ The application now works as if the school year were now taking place normally.
    Dates: American date system (MM/DD/YYYY)
    The Announcements section is a centralized hub for sharing important updates, events, and news. Teachers and the principal can create, edit, and remove announcements, while parents and students have read-only access to stay informed.
 
-   -----> GIF <--------
+   -----> GIF <---
 
-#### ✅ Grades page: 
-    Grades: European system (1-6 instead of A-F)
-    The Grades section organizes student performance by subject, semester (e.g., Fall/Winter, Spring/Summer), and class. Teachers and the principal can add, update, or remove grades, while parents and students have read-only access, ensuring transparency and real-time monitoring of academic progress.
+#### ✅ Grades page:
+   Grades: European system (1-6 instead of A-F)
+   The Grades section organizes student performance by subject, semester (e.g., Fall/Winter, Spring/Summer), and class. Teachers and the principal can add, update, or remove grades, while parents and students have read-only access, ensuring transparency and real-time monitoring of academic progress.
 
    -----> GIF <--------
 
