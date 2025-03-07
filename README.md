@@ -26,11 +26,11 @@ Student: login: .... password: ....
 # parent
 Parent: login: .... password: ....
 
+
 # You can log in using a parent or student account. For security reasons, teacher and principal credentials aren’t publicly shared in this demo. If you’re a recruiter and would like to explore these roles, please get in touch—I’ll reply promptly and provide all necessary passwords. Contact: rafaland21@protonmail.com
 
 # principal
 Principal: login: johndoe@xjournal.com password: BLANK
-
 # teacher
 Teacher: login: janedoe@xjournal.com password: BLANK
 
